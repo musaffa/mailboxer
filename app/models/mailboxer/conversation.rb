@@ -1,7 +1,7 @@
 class Mailboxer::Conversation < ActiveRecord::Base
   self.table_name = :mailboxer_conversations
 
-  attr_accessible :subject if Mailboxer.protected_attributes?
+  attr_accessible :subject, :is_feedback if Mailboxer.protected_attributes?
 
   has_many :opt_outs, :dependent => :destroy, :class_name => "Mailboxer::Conversation::OptOut"
   has_many :messages, :dependent => :destroy, :class_name => "Mailboxer::Message"

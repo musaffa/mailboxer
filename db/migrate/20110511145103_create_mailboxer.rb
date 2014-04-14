@@ -4,6 +4,7 @@ class CreateMailboxer < ActiveRecord::Migration
   	#Conversations
     create_table :mailboxer_conversations do |t|
       t.column :subject, :string, :default => ""
+      t.column :is_feedback, :boolean, :default => false
       t.column :created_at, :datetime, :null => false
       t.column :updated_at, :datetime, :null => false
     end    
